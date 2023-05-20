@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+   document.addEventListener("DOMContentLoaded", () => {
+
+    const seats = document.querySelectorAll(".quadrado1, .quadrado2, .quadrado3, .quadrado4, .quadrado5, .quadrado6, .quadrado7, .pgg, .pgg1");
+
+      const walletAmountElement = document.getElementById("wallet-amount");
+
+      const buyButton = document.getElementById("buy-button");
+
+      const listButton = document.getElementById("list-button");
+
+      const customerList = document.getElementById("customer-list");
+
+     
+
+      let selectedSeat = null;
+
+      const customers = [];
+
+
+ 
+
+      // Verifica se há dados salvos na Local Storage e carrega-os
+
+      if (localStorage.getItem("walletAmount")) {
+
+        walletAmount = parseInt(localStorage.getItem("walletAmount"));
+
+        walletAmountElement.textContent = walletAmount;
+
+      }
+
+
+ 
+
+      // Carrega os assentos comprados da Local Storage
+
+      const occupiedSeats =
+
+        JSON.parse(localStorage.getItem("occupiedSeats")) || [];
+
+
+ 
+
+      // Atualiza a aparência dos assentos comprados previamente
+
+      occupiedSeats.forEach((seatIndex) => {
+
+        seats[seatIndex].classList.add("occupied");
+
+        const customerName = customers[seatIndex];
+
+        if (customerName) {
+
+          const span = document.createElement("span");
+
+          span.textContent = customerName;
+
+          seats[seatIndex].appendChild(span);
+
+        }
+
+      });
+
+
+ 
+
+      // Atualiza a Local Storage com o valor atual da carteira
+
+      const updateWalletAmount = () => {
+
+        localStorage.setItem("walletAmount", walletAmount);
+
+      };
+
+
+ 
+
+      // Atualiza a Local Storage com os assentos comprados
+
+      const updateOccupiedSeats = () => {
+
+        localStorage.setItem("occupiedSeats", JSON.stringify(occupiedSeats));
+
+      };
+
+
+ 
+
+      // Função para comprar um assento
+
+      const buySeat = () => {
+
+        if (selectedSeat !== null) {
+
+          if (occupiedSeats.includes(selectedSeat)) {
+
+            // Assento já possui dono, redireciona para a página de "Ops, já tem dono"
+
+            window.location.href = "erro.html";
+
+          } else {
+
+            // Solicitar o nome da pessoa
+
+            alert("Digite o nome do cliente:");
+
+            const customerName = prompt("Nome do cliente:");
+
+            if (customerName) {
+
+              seats[selectedSeat].classList.add("occupied");
+
+              occupiedSeats.push(selectedSeat);
+
+              updateOccupiedSeats();
+
+              customers[selectedSeat] = customerName;
+
+              // Exibir o nome do cliente na div do assento
+
+              const span = document.createElement("span");
+
+              span.textContent = customerName;
+
+              seats[selectedSeat].appendChild(span);
+
+              // Redireciona para a página de "Obrigado por comprar"
+
+              //window.location.href = "compra.html";
+
+            }
+
+          }
+
+        }
+
+      };
+
+
+ 
+
+      // Atualiza o estado do botão de compra com base na seleção do assento
+
+      const updateBuyButtonState = () => {
+
+        buyButton.disabled = selectedSeat === null;
+
+      };
+
+
+ 
+
+      // Adiciona o evento de clique a cada assento
+
+      seats.forEach((seat, index) => {
+
+        seat.addEventListener("click", () => {
+
+          if (selectedSeat !== null) {
+
+            seats[selectedSeat].classList.remove("selected");
+
+          }
+
+          selectedSeat = index;
+
+          seats[selectedSeat].classList.add("selected");
+
+          updateBuyButtonState();
+
+        });
+
+      });
+
+
+ 
+
+      // Adiciona o evento de clique ao botão de compra
+
+      buyButton.addEventListener("click", buySeat);
+
+
+ 
+
+      // Exibe a lista de clientes
+
+      const displayCustomerList = () => {
+
+        customerList.innerHTML = "";
+
+        occupiedSeats.forEach((seatIndex) => {
+
+          const customerName = customers[seatIndex];
+
+          if (customerName) {
+
+            const li = document.createElement("li");
+
+            li.textContent = customerName;
+
+            customerList.appendChild(li);
+
+          }
+
+        });
+
+      };
+
+
+ 
+
+      // Adiciona o evento de clique ao botão de listar
+
+      listButton.addEventListener("click", displayCustomerList);
+
+    });
+
+
+ 
+
+   
+
+</script>
+</head>
+<body>
+
+    <h1 class="title1">Escolha o seu assento</h1>
+<hr>
+
+        <div class="quadrados">
+
+
+        <div class="linha-com-numeros">
+            <span class="spanA">A</span>
+        <div class="rafa34">
+        <div class="pgg"> <img src="img/p,azul.png" width="140%" class="imagem34"></div>
+        </div>
+        <div class="rafa35">
+        <div class="pgg1"> <img src="img/p,azul.png" width="140%" class="imagem35"></div>
+        </div>
+        </div>
+
+        <div class="linha-com-numeros">
+
+            <span class="spanB">B</span>
+
+        <div class="rafa1">
+        <div class="quadrado1" id="1" onclick="comprar()"> <img src="img/verde.png" width="100%" class="imagem1"> </div>
+        </div>
+
+        <div class="rafa2">
+        <div class="quadrado1" id="2"><img src="img/verde.png" width="100%" class="imagem2"></div>
+        </div>
+
+        <div class="rafa3">
+    <div class="quadrado1" id="3"><img src="img/verde.png" width="100%" class="imagem3"></div>
+    </div>
+
+    <div class="rafa4">
+    <div class="quadrado1" id="4"><img src="img/verde.png" width="100%" class="imagem4"></div>
+    </div>
+
+    <div class="rafa5">
+    <div class="quadrado1" id="5"><img src="img/verde.png" width="100%" class="imagem5"></div>
+    </div>
+
+  </div>
+
+
+  <div class="linha-com-numeros">
+
+    <span class="spanC">C</span>
+
+    <div class="rafa6">
+    <div class="quadrado1" id="6"><img src="img/verde.png" width="100%" class="imagem6"></div>
+    </div>
+
+    <div class="rafa7">
+    <div class="quadrado1" id="7"><img src="img/verde.png" width="100%" class="imagem7"></div>
+    </div>
+
+    <div class="rafa8">
+    <div class="quadrado1" id="8"><img src="img/verde.png" width="100%" class="imagem8"></div>
+    </div>
+
+    <div class="rafa9">
+    <div class="quadrado1" id="9"><img src="img/verde.png" width="100%" class="imagem9"></div>
+    </div>
+
+    <div class="rafa10">
+    <div class="quadrado1" id="10"><img src="img/verde.png" width="100%" class="imagem10"></div>
+    </div>
+
+  </div>
+
+  <div class="linha-com-numeros">
+
+    <span class="spanD">D</span>
+
+<div class="rafa11">
+    <div class="quadrado2" id="11"><img src="img/ciano.png" width="100%" class="imagem11"></div>
+</div>
+
+<div class="rafa12">
+    <div class="quadrado2" id="12"><img src="img/ciano.png" width="100%" class="imagem12"></div>
+</div>
+
+<div class="rafa13">
+    <div class="quadrado2" id="13"><img src="img/ciano.png" width="100%" class="imagem13"></div>
+</div>
+
+<div class="rafa14">
+    <div class="quadrado2" id="14"><img src="img/ciano.png" width="100%" class="imagem14"></div>
+</div>
+
+<div class="rafa15">
+    <div class="quadrado2" id="15"><img src="img/ciano.png" width="100%" class="imagem15"></div>
+</div>
+
+  </div>
+
+
+<div class="teste">
+  <div class="linha-com-numeros">
+
+    <span class="spanE">E</span>
+
+<div class="rafa16">
+    <div class="quadrado3" id="16"><img src="img/roxo.png" width="100%" class="imagem16"></div>
+</div>
+
+<div class="rafa17">
+    <div class="quadrado3" id="17"><img src="img/roxo.png" width="100%" class="imagem17"></div>
+</div>
+
+<div class="rafa18">
+    <div class="quadrado4" id="18"><img src="img/vermelha.png" width="100%" class="imagem18"></div>
+</div>
+
+<div class="rafa19">
+    <div class="quadrado5" id="19"><img src="img/amarelo.png" width="100%" class="imagem19"></div>
+</div>
+
+<div class="rafa20">
+    <div class="quadrado5" id="20"><img src="img/amarelo.png" width="100%" class="imagem20"></div>
+</div>
+
+<div class="rafa21">
+    <div class="quadrado5" id="21"><img src="img/amarelo.png" width="100%" class="imagem21"></div>
+</div>
+
+<div class="rafa22">
+    <div class="quadrado4" id="22"><img src="img/vermelha.png" width="100%" class="imagem22"></div>
+</div>
+
+<div class="rafa23">
+    <div class="quadrado3" id="23"><img src="img/roxo.png" width="100%" class="imagem23"></div>
+</div>
+
+<div class="rafa24">
+    <div class="quadrado7" id="24"><img src="img/roxo.png" width="100%" class="imagem24"></div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="teste2">
+  <div class="linha-com-numeros">
+
+    <span class="spanF">F</span>
+
+<div class="rafa25">
+    <div class="quadrado3" id="25"><img src="img/roxo.png" width="100%" class="imagem25"></div>
+</div>
+
+<div class="rafa26">
+    <div class="quadrado3" id="26"><img src="img/roxo.png" width="100%" class="imagem26"></div>
+</div>
+
+<div class="rafa27">
+    <div class="quadrado4" id="27"><img src="img/vermelha.png" width="100%" class="imagem27"></div>
+</div>
+
+<div class="rafa28">
+    <div class="quadrado5" id="28"><img src="img/amarelo.png" width="100%" class="imagem28"></div>
+</div>
+
+<div class="rafa29">
+    <div class="quadrado5" id="29"><img src="img/amarelo.png" width="100%" class="imagem29"></div>
+</div>
+
+<div class="rafa30">
+    <div class="quadrado5" id="30"><img src="img/amarelo.png" width="100%" class="imagem30"></div>
+
+</div>
+
+<div class="rafa31">
+    <div class="quadrado4" id="31"><img src="img/vermelha.png" width="100%" class="imagem31"></div>
+</div>
+
+<div class="rafa32">
+    <div class="quadrado3" id="32"><img src="img/roxo.png" width="100%" class="imagem32"></div>
+</div>
+
+<div class="rafa33">
+    <div class="quadrado7" id="33"><img src="img/roxo.png" width="100%" class="imagem33"></div>
+</div>
+
+  </div>
+</div>
+
+  <div class="linhanum">
+  <div class="linha-com-numeros">
+
+    <span class="numero">1</span>
+
+    <span class="numero">2</span>
+
+    <span class="numero">3</span>
+
+    <span class="numero">4</span>
+
+    <span class="numero">5</span>
+
+    <span class="numero">6</span>
+
+    <span class="numero">7</span>
+
+    <span class="numero">8</span>
+
+    <span class="numero">9</span>
+
+</div>
+  </div>
+
+</div>
+<div>
+
+<hr>
+
+ 
+
+<!-- Valores -->
+
+<center>
+
+<div class="container">
+    <div class="conteudo">
+        <h1 class="ingressos">Lista de ingressos</h1>
+        <div class="munir0"></div><h3> Valor: R$: 50,00 </h3><br>
+        <div class="munir1"></div><h3> Valor: R$: 25,00 </h3><br>
+        <div class="munir2"></div><h3> Valor: R$: 20,00 </h3><br>
+        <div class="munir5"></div><h3> Valor: R$: 15,00 </h3><br>
+        <div class="munir4"></div><h3> Valor: R$: 12,00 </h3><br>
+        <div class="munir3"></div><h3> Valor: R$: 10,00 </h3><br>
+    </div>
+
+    
+
+</div>
+
+</center>
+
+<hr>
+
+<br>
+
+</div>
+
+<div class="container2">
+    <div class="conteudo2">
+        <button class="buy-button comprar" id="buy-button" disabled>Comprar</button>\
+        <a href="filme.html"> <input type="button" class="comprar" value="Voltar"></a>
+        <a href="index.html"> <input type="button" class="comprar" value="Sair"></a>
+</div>
+
+<!--
+<center>
+    <a href="compra.html"> <input type="button" class="comprar" value="Comprar"></a> <br></br>
+</center>
+
+<center>
+    <a href="erro.html"> <input type="button" class="comprar" value="Ocupado"></a> <br></br>
+</center>
+
+<center>
+    <a href="filme.html"> <input type="button" class="comprar" value="Voltar"></a><br></br>
+</center>
+
+<center>
+    <a href="index.html"> <input type="button" class="comprar" value="Sair"></a> <br> <br> <br> <br>
+</center>    
+ -->
+
+
+</body>
+
+</html>

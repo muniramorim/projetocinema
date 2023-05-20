@@ -1,0 +1,859 @@
+ .quadrado1.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .quadrado2.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .quadrado3.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .quadrado4.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .quadrado5.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .quadrado6.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .quadrado7.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .pgg.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+  .pgg1.occupied {
+    background-color: #A1BFCF;
+    cursor: not-allowed;
+    border-radius: 90%;
+  }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Ubuntu:wght@400;500&display=swap');
+
+:root{
+    --primary-color: #000000;
+    --secundary-color: #FFF;
+    --text-color-dark: rgb(255, 0, 0);
+    --text-color-light: #fff;
+    --icon-color: #F3F3F3;
+}
+
+/* Botões Comprar, Ocupado, Voltar e Sair */
+
+.container2 {
+  width: 100%;
+}
+
+.conteudo2 {
+  display: inline-block;
+  width: calc(100% - 100px); /* Opcional: Define a largura da div */
+}
+
+.comprar{
+    width: 140px;
+    height: 40px;
+    border-style: ridge;
+    border-radius: 50px;
+    border: 2px solid #003b55;
+    background-color: #afe7ff;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #003b55;
+    cursor: pointer;
+    transition: .7s;
+}
+
+.comprar:hover{
+    background-color: transparent;
+    color: var(--secundary-color);
+}
+
+.comprar-light{
+    border: 2px solid var(--secundary-color);
+    color: var(--text-color-light);
+}
+
+
+.quadrados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.teste{
+    margin-top: -10px;
+    margin-left: 8px;
+}
+
+.teste2{
+    margin-top: -20px;
+    margin-left: 8px;
+}
+
+.linhanum{
+    margin-top: -40px;
+    margin-left: 12px;
+}
+
+
+.linha {
+    display: flex;
+}
+
+.quadrado1 {
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-top: -30px;
+}
+
+.quadrado2:hover {
+    background-color: #2A3236;
+    border-radius: 5%;
+    }
+
+
+.quadrado2 {
+
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-top: -30px;
+}
+
+.quadrado2:hover {
+    background-color: #2A3236;
+}
+
+
+
+.quadrado3 {
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-top: -10px;
+
+}
+
+.quadrado3:hover {
+    background-color: #2A3236;
+}
+
+
+.quadrado6 {
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-top: -10px;
+ 
+}
+
+.quadrado6:hover {
+    background-color: #2A3236;
+}
+
+
+
+.quadrado7 {
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 1px;
+    margin-top: 9px;
+
+}
+
+.quadrado7:hover {
+    background-color: #2A3236;
+}
+
+
+
+.quadrado4 {
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-top: -10px;
+
+}
+
+.quadrado4:hover {
+    background-color: #2A3236;
+}
+
+
+.quadrado5 {
+    background-color:#2A3236;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    margin-top: -10px;
+
+}
+
+.quadrado5:hover {
+
+    background-color: #2A3236;
+
+
+}
+
+.ingressos {
+    text-align: center;
+}
+
+.linha-com-numeros {
+    display: flex;
+    align-items: center;
+}
+
+.title1 {
+    text-align: center;
+}
+
+.numero {
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+    color: white;
+}
+/* =================================
+
+Cores dos valores - Verde até Roxo */
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.h3 {
+  display: inline-block;
+  margin-right: 10px; /* Opcional: Adiciona um espaçamento entre o h1 e a div */
+}
+
+.conteudo {
+  display: inline-block;
+  width: calc(100% - 100px); /* Opcional: Define a largura da div */
+  margin-left: -22%;
+}
+
+.ooo{
+    background-color: transparent;
+    border: none;
+    color: white;
+    
+}
+
+    /*Azul*/
+.munir0{ 
+    background-color: rgb(0, 12, 239);
+    width: 40px;
+    height: 40px;
+    margin-left: -150px;
+    margin-top: -10px;
+    border-radius: 55%;
+}
+
+    /* Verde */
+.munir1{ 
+    background-color: rgb(168, 248, 168);
+    width: 40px;
+    height: 40px;
+    margin-left: -150px;
+    margin-top: -10px;
+    border-radius: 55%;
+}
+    
+.munir2{
+    background-color: rgb(0, 255, 221);
+    width: 40px;
+    height: 40px;
+    margin-left: -150px;
+    margin-top: -10px;
+    border-radius: 55%;
+}
+
+/* Roxo */
+.munir3{
+    background-color: rgb(165, 36, 197);
+    width: 40px;
+    height: 40px;
+    margin-left: -150px;
+    margin-top: -10px;
+    border-radius: 55%;
+}
+
+/* Vermelho */
+.munir4{
+    background-color: rgb(230, 57, 57);
+    width: 40px;
+    height: 40px;
+    margin-left: -150px;
+    margin-top: -10px;
+    border-radius: 55%;
+}
+
+/* Amarelo */
+.munir5{
+    background-color: rgb(253, 204, 68);
+    width: 40px;
+    height: 40px;
+    margin-left: -150px;
+    margin-top: -10px;
+    border-radius: 55%;
+}
+
+/* =============================== */
+
+.comprase{
+    background-color: rgb(4, 244, 4);
+    width: 600px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin-top: 200px;
+    
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: white;
+    font-size: 50px;
+}
+
+.falhou{
+    background-color: rgb(215, 0, 0);
+    width: 600px;
+    padding: -5px;
+    border-radius: 20px;
+    margin-top: 200px;
+}
+
+h2{
+    font-family: 'Hammersmith One', sans-serif;
+    color: #C2E5F5;
+    margin-left: 20px;  
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+body{
+     background-color: #2A3236;
+}
+
+h1{
+    color: #C2E5F5;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+h3{
+    margin-top: -30px;
+    margin-left: 60px;
+    color: #ADCDDB;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.rafa1 {
+  position: relative;
+}
+
+.imagem1 {
+  transition: transform 0.3s ease;
+}
+
+.imagem1:hover {
+  transform: scale(1.2);
+}
+
+.rafa2{
+  position: relative;
+}
+
+.imagem2 {
+  transition: transform 0.3s ease;
+}
+
+.imagem2:hover {
+  transform: scale(1.2);
+}
+
+.rafa3 {
+  position: relative;
+}
+
+.imagem3 {
+  transition: transform 0.3s ease;
+}
+
+.imagem3:hover {
+  transform: scale(1.2);
+}
+
+.rafa4 {
+  position: relative;
+}
+
+.imagem4 {
+  transition: transform 0.3s ease;
+}
+
+.imagem4:hover {
+  transform: scale(1.2);
+}
+
+.rafa5 {
+  position: relative;
+}
+
+.imagem5 {
+  transition: transform 0.3s ease;
+}
+
+.imagem5:hover {
+  transform: scale(1.2);
+}
+
+.rafa6 {
+  position: relative;
+}
+
+.imagem6 {
+  transition: transform 0.3s ease;
+}
+
+.imagem6:hover {
+  transform: scale(1.2);
+}
+
+.rafa7{
+  position: relative;
+}
+
+.imagem7 {
+  transition: transform 0.3s ease;
+}
+
+.imagem7:hover {
+  transform: scale(1.2);
+}
+
+.rafa8{
+  position: relative;
+}
+
+.imagem8 {
+  transition: transform 0.3s ease;
+}
+
+.imagem8:hover {
+  transform: scale(1.2);
+}
+
+.rafa9 {
+  position: relative;
+}
+
+.imagem9 {
+  transition: transform 0.3s ease;
+}
+
+.imagem9:hover {
+  transform: scale(1.2);
+}
+
+.rafa10 {
+  position: relative;
+}
+
+.imagem10 {
+  transition: transform 0.3s ease;
+}
+
+.imagem10:hover {
+  transform: scale(1.2);
+}
+
+.rafa11 {
+  position: relative;
+}
+
+.imagem11 {
+  transition: transform 0.3s ease;
+}
+
+.imagem11:hover {
+  transform: scale(1.2);
+}
+
+.rafa12 {
+  position: relative;
+}
+
+.imagem12 {
+  transition: transform 0.3s ease;
+}
+
+.imagem12:hover {
+  transform: scale(1.2);
+}
+
+.rafa13 {
+  position: relative;
+}
+
+.imagem13 {
+  transition: transform 0.3s ease;
+}
+
+.imagem13:hover {
+  transform: scale(1.2);
+}
+
+.rafa14 {
+  position: relative;
+}
+
+.imagem14 {
+  transition: transform 0.3s ease;
+}
+
+.imagem14:hover {
+  transform: scale(1.2);
+}
+
+.rafa15 {
+  position: relative;
+}
+
+.imagem15 {
+  transition: transform 0.3s ease;
+}
+
+.imagem15:hover {
+  transform: scale(1.2);
+}
+
+.rafa16 {
+  position: relative;
+}
+
+.imagem16 {
+  transition: transform 0.3s ease;
+}
+
+.imagem16:hover {
+  transform: scale(1.2);
+}
+
+.rafa17 {
+  position: relative;
+}
+
+.imagem17 {
+  transition: transform 0.3s ease;
+}
+
+.imagem17:hover {
+  transform: scale(1.2);
+}
+
+.rafa18 {
+  position: relative;
+}
+
+.imagem18 {
+  transition: transform 0.3s ease;
+}
+
+.imagem18:hover {
+  transform: scale(1.2);
+}
+
+.rafa19 {
+  position: relative;
+}
+
+.imagem19 {
+  transition: transform 0.3s ease;
+}
+
+.imagem19:hover {
+  transform: scale(1.2);
+}
+
+.rafa20 {
+  position: relative;
+}
+
+.imagem20 {
+  transition: transform 0.3s ease;
+}
+
+.imagem20:hover {
+  transform: scale(1.2);
+}
+
+.rafa21 {
+  position: relative;
+}
+
+.imagem21 {
+  transition: transform 0.3s ease;
+}
+
+.imagem21:hover {
+  transform: scale(1.2);
+}
+
+.rafa22 {
+  position: relative;
+}
+
+.imagem22 {
+  transition: transform 0.3s ease;
+}
+
+.imagem22:hover {
+  transform: scale(1.2);
+}
+
+.rafa23 {
+  position: relative;
+}
+
+.imagem23 {
+  transition: transform 0.3s ease;
+}
+
+.imagem23:hover {
+  transform: scale(1.2);
+}
+
+.rafa24 {
+  position: relative;
+}
+
+.imagem24 {
+  transition: transform 0.3s ease;
+}
+
+.imagem24:hover {
+  transform: scale(1.2);
+}
+
+.rafa25 {
+  position: relative;
+}
+
+.imagem25 {
+  transition: transform 0.3s ease;
+}
+
+.imagem25:hover {
+  transform: scale(1.2);
+}
+
+.rafa26 {
+  position: relative;
+}
+
+.imagem26 {
+  transition: transform 0.3s ease;
+}
+
+.imagem26:hover {
+  transform: scale(1.2);
+}
+
+.rafa27 {
+  position: relative;
+}
+
+.imagem27 {
+  transition: transform 0.3s ease;
+}
+
+.imagem27:hover {
+  transform: scale(1.2);
+}
+
+.rafa28 {
+  position: relative;
+}
+
+.imagem28 {
+  transition: transform 0.3s ease;
+}
+
+.imagem28:hover {
+  transform: scale(1.2);
+}
+
+.rafa29 {
+  position: relative;
+}
+
+.imagem29 {
+  transition: transform 0.3s ease;
+}
+
+.imagem29:hover {
+  transform: scale(1.2);
+}
+
+.rafa30 {
+  position: relative;
+}
+
+.imagem30 {
+  transition: transform 0.3s ease;
+}
+
+.imagem30:hover {
+  transform: scale(1.2);
+}
+
+.rafa31 {
+  position: relative;
+}
+
+.imagem31 {
+  transition: transform 0.3s ease;
+}
+
+.imagem31:hover {
+  transform: scale(1.2);
+}
+
+.rafa32 {
+  position: relative;
+}
+
+.imagem32 {
+  transition: transform 0.3s ease;
+}
+
+.imagem32:hover {
+  transform: scale(1.2);
+}
+
+.rafa33 {
+  position: relative;
+}
+
+.imagem33 {
+  transition: transform 0.3s ease;
+}
+
+.imagem33:hover {
+  transform: scale(1.2);
+}
+
+.rafa34 {
+  position: relative;
+  
+}
+
+.imagem34 {
+  transition: transform 0.3s ease;
+}
+
+.imagem34:hover {
+  transform: scale(1.2);
+}
+
+.rafa35 {
+  position: relative;
+  
+}
+
+.imagem35 {
+  transition: transform 0.3s ease;
+  
+}
+
+.imagem35:hover {
+  transform: scale(1.2);
+  
+}
+
+.pgg{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    transform: rotate(540deg);
+    margin-top: 18px;
+}
+
+.pgg:hover {
+    transform: rotate(540deg);
+    
+}
+
+.pgg1{
+    width: 40px;
+    height: 40px;
+    margin-left: 125px;
+    transform: rotate(540deg);
+}
+
+.spanA {
+    color: white;
+    margin-left: 5px;
+}
+
+.spanB {
+    color: white;
+    margin-top: -20px;
+}
+
+.spanC {
+    color: white;
+    margin-top: -20px;
+}
+
+.spanD {
+    color: white;
+    margin-top: -20px;
+}
+
+.spanE {
+    color: white;
+}
+
+.spanF {
+    color: white;
+}

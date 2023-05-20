@@ -1,0 +1,144 @@
+body{
+    background-size: 100% 100%;
+}
+
+.cinema {
+  perspective: 800px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.screen {
+  width: 80%;
+  height: 95%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px rgba(255, 1000, 100, 100.8);
+  border-radius: 5%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.gif {
+  position: absolute;
+  top: 9%;
+  left: 10%;
+  width: 80%;
+  height: 119%;
+  border-radius: 5%;
+  z-index: 1;
+} 
+
+.cinema1 {
+  perspective: 7000px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.screen1 {
+  width: 80%;
+  height: 85%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px rgba(355, 1000, 100, 700.9);
+  border-radius: 5%;
+}
+
+.container1 {
+  position: relative;
+  width: 10%;
+  height: 400px;
+}
+
+.gif1 {
+  position: absolute;
+  top: 16%;
+  left: 100%;
+  width: 798%;
+  height: 105%;
+  border-radius: 5%;
+  z-index: 1;
+}
+
+.cinema2 {
+  perspective: 7000px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.screen2 {
+  width: 80%;
+  height: 85%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px rgba(355, 1000, 100, 700.9);
+  border-radius: 5%;
+}
+
+.container2 {
+  position: relative;
+  width: 10%;
+  height: 400px;
+}
+
+.gif2 {
+  position: absolute;
+  top: 16%;
+  left: 100%;
+  width: 798%;
+  height: 105%;
+  border-radius: 5%;
+  z-index: 1;
+}
+
+.cinema3 {
+  perspective: 100%;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.screen3 {
+  width: 70%;
+  height: 106%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: -70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px rgba(355, 1000, 100, 700.9);
+  border-radius: 0;
+}
+
+.container3 {
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
+
+.gif3 {
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  width: 70%;
+  height: 75%;
+  border-radius: 0;
+  z-index: 1;
+}
+

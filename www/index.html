@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/142460104e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+
+
+
+    <script>
+    var proprietario
+    var placa
+
+function cadastrar()
+{
+    placa = document.getElementById('email').value
+
+    proprietario = document.getElementById('senha').value
+
+        if(placa, proprietario == "")
+        {
+            
+            alert("Algum campo está em vazio, por favor preencha!!!")
+        }
+        else {
+             localStorage.setItem(placa, proprietario)
+               alert('Cadastrado com sucesso!!!')
+        } 
+}
+
+
+function exibir(){
+
+    var exibir
+
+    var digitado
+
+    var senha
+    
+    var exibir2
+
+    exibir2 = localStorage.getItem(placa)
+    digitado =  document.getElementById('coletortxt').value
+    senha = document.getElementById('coletortxt2').value
+    localStorage.setItem(digitado, senha)
+    exibir = localStorage.getItem(digitado)    
+
+    if((exibir == exibir2) == true){
+    location.href = 'filme.html'
+    }else{   
+    alert('Usuário ou senha estão incorretos!!')
+}}
+
+</script>
+</head>
+<body>
+	        <main>
+              <div class="container">
+              <div class="row">
+              <div class="col-6">
+                  
+
+                <div class="login-container" id="login-container">
+                <div class="form-container">
+
+                <form class="form form-login">
+                    <h3 class="form-title">Cadastrar-se</h3>
+                
+                    <div class="form-input-container">
+                        <input type="text" class="form-input" id="email" placeholder="Email" required>
+                        <input type="password" class="form-input" id="senha" placeholder="Senha" required>
+                    </div>
+                    
+                    <input type="button" class="form-button" value="Cadastrar" onclick="cadastrar()">
+                    
+                </form>
+                </div>
+                </div>
+                </div>
+
+                <div class="container">
+                <div class="row">
+                <div class="col-6">
+                <div class="overlay-container">
+                <div class="overlay">
+                    <h2 class="form-title form-title-light">Entrar!</h2>
+                    
+                    <div class="form-input-container">
+                        <input type="text" id="coletortxt" class="form-input" placeholder="Email">
+                        <input type="password" id="coletortxt2" class="form-input" placeholder="Senha">
+                    </div>
+
+                    <button class="form-button form-button-light"  value="pesquisar" onclick="exibir()">Login</button>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+            </main>
+</body>
+</html>
